@@ -1,0 +1,9 @@
+.main-container {
+    width: 95%;
+    margin: auto;
+}
+
+.location-container {
+    display: flex;
+    justify-content: space-between;
+}
