@@ -1,5 +1,5 @@
 import React from "react";
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import {
   addIcon,
   closeIcon,
@@ -123,29 +123,53 @@ const TableRow = ({
       <td>
         {name === "new" ? (
           <div>
-            <button onClick={createDataHandler}>{saveIcon}</button>
+            <Button size="sm" variant="primary" onClick={createDataHandler}>
+              {saveIcon}
+            </Button>
           </div>
         ) : (
-          <div>
+          <div className="btn-container">
             {editableId !== item.id && (
-              <button onClick={() => saveDataHandler(item)}>{EditIcon}</button>
+              <Button
+                size="sm"
+                variant="success"
+                onClick={() => saveDataHandler(item)}
+              >
+                {EditIcon}
+              </Button>
             )}
             {editableId === item.id && (
-              <button onClick={createDataHandler}>{saveIcon}</button>
+              <Button size="sm" variant="primary" onClick={createDataHandler}>
+                {saveIcon}
+              </Button>
             )}
-            <button onClick={() => deleteDataHandler(item.id)}>
+            <Button
+              variant="danger"
+              size="sm"
+              onClick={() => deleteDataHandler(item.id)}
+            >
               {DeleteIcon}
-            </button>
+            </Button>
           </div>
         )}
       </td>
       <td>
         {name === "new"
           ? addData && (
-              <button onClick={removeFormDataHandler}>{closeIcon}</button>
+              <Button
+                size="sm"
+                variant="danger"
+                onClick={removeFormDataHandler}
+              >
+                {closeIcon}
+              </Button>
             )
           : index === formDataArray.length - 1 &&
-            !addData && <button onClick={addFormDataHandler}>{addIcon}</button>}
+            !addData && (
+              <Button size="sm" variant="primary" onClick={addFormDataHandler}>
+                {addIcon}
+              </Button>
+            )}
       </td>
     </tr>
   );
