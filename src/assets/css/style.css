@@ -17,3 +17,7 @@
     background-color: #0e7304 !important;
     border-color: #0e7304 !important;
 }
+
+.table_row-data {
+    vertical-align: middle;
+}

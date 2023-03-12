@@ -59,7 +59,7 @@ const TableRow = ({
 
   return (
     <tr>
-      <td>
+      <td className="table_row-data">
         <Form.Control
           type="text"
           placeholder="Enter device name"
@@ -76,7 +76,7 @@ const TableRow = ({
           disabled={name === "new" ? editableId : editableId !== item.id}
         />
       </td>
-      <td>
+      <td className="table_row-data">
         {name === "new"
           ? `${
               formDataArray.length > 0
@@ -88,7 +88,7 @@ const TableRow = ({
           : `${item.miles - 1} - ${item.miles}`}{" "}
         Miles
       </td>
-      <td>
+      <td className="table_row-data">
         <Form.Select
           aria-label="Default select example"
           onChange={(e) => {
@@ -103,7 +103,7 @@ const TableRow = ({
           <option value="Tab">Tab</option>
         </Form.Select>
       </td>
-      <td>
+      <td className="table_row-data">
         <Form.Check
           onChange={(e) => setDeviceEnabled(e.target.checked)}
           type="checkbox"
@@ -120,7 +120,7 @@ const TableRow = ({
           disabled={name === "new" ? editableId : editableId !== item.id}
         />
       </td>
-      <td>
+      <td className="table_row-data">
         {name === "new" ? (
           <div>
             <Button size="sm" variant="primary" onClick={createDataHandler}>
@@ -153,7 +153,7 @@ const TableRow = ({
           </div>
         )}
       </td>
-      <td>
+      <td className="table_row-data">
         {name === "new"
           ? addData && (
               <Button
